@@ -72,11 +72,11 @@ const Home = () => {
   // console.log(searchOption)
   // console.log(searchOption)
   return (
-    <>
+    <><div class="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-blue-100 bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
       {/* I can use children props here */}
       <MainPageLayout />
       <SearchInput
-        placeholder="serach for something"
+        placeholder="Search for something"
         onKeyDown={onKeyDown}
         onChange={onInput}
         value={input}
