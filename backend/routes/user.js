@@ -105,6 +105,14 @@ router.put("/update", authMiddleware, async (req, res) => {
     })
 })
 
+router.get("/username", authMiddleware, async (req, res) => {
 
+    const user = await User.findOne({
+        _id: req.userId
+    });
 
+    res.json({
+        username: user.username
+    })
+});
 module.exports = router;
