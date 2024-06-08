@@ -3,6 +3,7 @@ import MainPageLayout from '../components/MainPageLayout';
 import { useShows } from '../misc/Custom-hooks';
 import ShowGrid from '../components/show/ShowGrid';
 import apiGet from '../misc/Fechconfig';
+import Navs from '../components/Navs';
 
 const Starred = () => {
   const [starred] = useShows();
@@ -31,7 +32,7 @@ const Starred = () => {
 
   return (
     <div>
-    <MainPageLayout />
+    <Navs/>
       {isLoading && <div>Shows are still loading</div>}
       {error && <div>Error occured: {error}</div>}
       {!isLoading && !shows && <div>No shows were added</div>}

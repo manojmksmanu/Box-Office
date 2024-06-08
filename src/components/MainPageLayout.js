@@ -5,8 +5,8 @@ import NavDuplicate from './show/NavDuplicate'
 const MainPageLayout = () => {
   return (
     <>
-    {/* <NavDuplicate/> */}
-    <Navs/>
+    <NavDuplicate/>
+    {/* <Navs/> */}
     {/* {children} I can use children props */}
     </>
   )

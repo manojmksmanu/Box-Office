@@ -12,7 +12,7 @@ export const Appbar = () => {
 
 
     const getLogout = ()=>{
-        
+        localStorage.removeItem('token');
         navigate('/signin')
         alert('Logout successfully')
     }
