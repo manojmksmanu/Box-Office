@@ -4,10 +4,10 @@ import { LinkStyled, NavsList } from './Navs.styled';
 import Title from './Title';
 const LINKS = [
     {
-        to:'/',text:'Home'
+        to:'/dashboard',text:'Dashboard'
     },
     {
-        to:'/starred',text:'Start'
+        to:'/starred',text:'Favourite'
     }
 ]
 

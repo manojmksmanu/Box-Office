@@ -4,10 +4,14 @@ import ShowGrid from "../components/show/ShowGrid";
 import ActorGrid from "../components/actor/ActorGrid";
 import apiGet from "../misc/Fechconfig";
 import { RadioInputsWrapper, SearchButtonWrapper, SearchInput } from "./Home.styled";
+import { useNavigate } from "react-router-dom";
 import CustomRadio from "../components/CustomRadio";
 // import Firstpageshow from "./Firstpageshow";
 
 const Home = () => {
+  
+  const navigate = useNavigate();
+
   const [input, setInput] = useState("");
   const [results, setResults] = useState(null);
   const [searchOption, setSearchOption] = useState("shows");
@@ -15,6 +19,11 @@ const Home = () => {
   // * if search serachOption is shows than isShowsSearch is true otherwiese it is false 🧠🧠
   const isShowsSearch = searchOption === "shows";
   console.log(isShowsSearch);
+
+
+  const divertToSingup = () =>{
+    navigate("/signin")
+  }
   const onInput = (e) => {
     setInput(e.target.value);
   };
@@ -73,10 +82,21 @@ const Home = () => {
   // console.log(searchOption)
   return (
     <>
+     <div className="bg-blue-500 shadow h-14 flex justify-between">
+            <div className="flex flex-col justify-center h-full ml-4 font-bold">
+                Box Office
+            </div>
+            <div className="flex">
+                <div className="flex flex-col justify-center h-full mr-4">
+                    <button onClick={divertToSingup} className="bg-slate-400 p-2 rounded-full mr-2 hover:bg-slate-500 border border-white">Sign in</button>
+                </div>
+            </div>
+        </div>
+    <div class="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-blue-100 bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
       {/* I can use children props here */}
       <MainPageLayout />
       <SearchInput
-        placeholder="serach for something"
+        placeholder="Search for something"
         onKeyDown={onKeyDown}
         onChange={onInput}
         value={input}
